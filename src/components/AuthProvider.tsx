@@ -39,6 +39,7 @@ import {
   getFirebaseDb,
   isFirebaseConfigured,
 } from "../lib/firebase";
+import { preferGoogleRedirect } from "../lib/auth-google";
 import { friendlyAuthError } from "../lib/auth-errors";
 
 const REDIRECT_ERROR_KEY = "aa_auth_redirect_error";
@@ -206,6 +207,12 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       provider.addScope("email");
       provider.addScope("profile");
       provider.setCustomParameters({ prompt: "select_account" });
+
+      /* Popups break often on live domains — use a full-page redirect instead. */
+      if (preferGoogleRedirect()) {
+        await signInWithRedirect(auth, provider);
+        return;
+      }
 
       try {
         const cred = await signInWithPopup(auth, provider);

@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "auth:setup": "node scripts/setup-firebase.mjs",
+    "auth:production": "node scripts/setup-auth-production.mjs",
     "book:setup": "node scripts/setup-booking.mjs",
     "book:test": "node scripts/test-booking.mjs",
     "firebase:deploy": "firebase deploy",

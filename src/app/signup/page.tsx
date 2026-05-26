@@ -14,6 +14,7 @@ import {
   SubmitButton,
 } from "../../components/AuthFormParts";
 import FirebaseSetupNotice from "../../components/FirebaseSetupNotice";
+import { authNotConfiguredMessage } from "../../lib/auth-google";
 import { friendlyAuthError } from "../../lib/auth-errors";
 
 export default function SignupPage() {
@@ -66,9 +67,7 @@ function SignupForm() {
     clearBootstrapError();
     if (!validate()) return;
     if (!configured) {
-      setError(
-        "Auth is not configured yet. Add your Firebase keys to .env.local and restart the dev server."
-      );
+      setError(authNotConfiguredMessage());
       return;
     }
 
@@ -87,14 +86,13 @@ function SignupForm() {
     setError(null);
     clearBootstrapError();
     if (!configured) {
-      setError(
-        "Auth is not configured yet. Add your Firebase keys to .env.local and restart the dev server."
-      );
+      setError(authNotConfiguredMessage());
       return;
     }
     setSubmitting(true);
     try {
       await signInWithGoogle(true);
+      router.replace(target);
     } catch (err) {
       setError(friendlyAuthError(err));
       setSubmitting(false);
