@@ -174,7 +174,7 @@ export default function MathematicsHub() {
               </h2>
               <p className="mt-2 text-white/75">Book a free 1:1 session with Adam — online or in-person.</p>
             </div>
-            <div className="md:col-span-4 md:justify-self-end flex flex-wrap gap-3">
+            <div className="md:col-span-4 md:justify-self-end btn-stack-mobile md:flex-row md:justify-end">
               <Button href="/book" rightIcon={<Arrow />}>Book a class</Button>
             </div>
           </div>
