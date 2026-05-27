@@ -182,27 +182,27 @@ export default function Quiz({ title = "Check yourself", questions, onComplete }
         </div>
       )}
 
-      <div className="mt-6 flex items-center justify-between gap-3">
+      <div className="mt-6 flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3">
         <button
           type="button"
           onClick={() => setIndex((i) => Math.max(0, i - 1))}
           disabled={index === 0}
-          className="btn btn-ghost"
+          className="btn btn-ghost w-full sm:w-auto"
         >
           ← Previous
         </button>
-        <div className="flex gap-2">
+        <div className="flex gap-2 w-full sm:w-auto">
           {!revealed[q.id] ? (
             <button
               type="button"
               onClick={reveal}
               disabled={!current}
-              className="btn btn-outline"
+              className="btn btn-outline flex-1 sm:flex-none"
             >
               Check
             </button>
           ) : (
-            <button type="button" onClick={next} className="btn btn-primary">
+            <button type="button" onClick={next} className="btn btn-primary flex-1 sm:flex-none">
               {isLast ? "Finish quiz" : "Next →"}
             </button>
           )}
@@ -230,7 +230,7 @@ function Option({
       disabled={disabled}
       aria-pressed={selected}
       className={[
-        "w-full text-left p-4 rounded-md border-2 transition-colors",
+        "w-full text-left p-4 rounded-md border-2 transition-colors min-h-[44px]",
         selected
           ? "border-[var(--color-brand-500)] bg-[var(--color-brand-50)] text-[var(--color-ink)]"
           : "border-[var(--color-border)] bg-white text-[var(--color-ink)] hover:border-[var(--color-border-strong)] hover:bg-[var(--color-surface-2)]",
