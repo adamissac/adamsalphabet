@@ -80,7 +80,7 @@ function Dashboard() {
               type="button"
               onClick={onSignOut}
               disabled={signingOut}
-              className="btn btn-outline btn-sm"
+              className="btn btn-outline btn-sm w-full sm:w-auto"
             >
               {signingOut ? "Signing out…" : "Sign out"}
               <span aria-hidden>→</span>
@@ -172,7 +172,7 @@ function Dashboard() {
           <h2 className="font-display font-bold text-xl sm:text-2xl mt-1 text-white">Book a free 1-on-1 with Adam</h2>
           <p className="small text-[#C8C9CC] mt-2 max-w-lg">Bring a topic from any unit — Zoom or in-person in the Atlanta area.</p>
         </div>
-        <Link href="/book" className="btn btn-lg bg-white text-[var(--color-brand-700)] hover:bg-white/90 shrink-0">
+        <Link href="/book" className="btn btn-lg bg-white text-[var(--color-brand-700)] hover:bg-white/90 shrink-0 w-full sm:w-auto">
           Book a session →
         </Link>
       </div>
