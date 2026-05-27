@@ -29,7 +29,7 @@ export default function ResourceLinkCard({ href, title, description, source, ico
           </span>
         )}
       </div>
-      <h3 className="font-display font-semibold text-lg text-[var(--color-ink)] group-hover:text-[var(--color-brand-700)] transition-colors">
+      <h3 className="font-display font-semibold text-lg text-[var(--color-ink)] group-hover:text-[var(--color-brand-700)] transition-colors break-words">
         {title}
       </h3>
       {description && <p className="small text-[var(--color-ink-muted)]">{description}</p>}
