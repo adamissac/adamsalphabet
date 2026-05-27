@@ -4,8 +4,8 @@ export type Crumb = { label: string; href?: string };
 
 export default function Breadcrumbs({ items }: { items: Crumb[] }) {
   return (
-    <nav aria-label="Breadcrumb" className="text-sm">
-      <ol className="flex flex-wrap items-center gap-1.5 text-[var(--color-ink-muted)]">
+    <nav aria-label="Breadcrumb" className="text-sm max-w-full">
+      <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[var(--color-ink-muted)]">
         {items.map((item, idx) => {
           const last = idx === items.length - 1;
           return (
@@ -15,7 +15,7 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
                   {item.label}
                 </Link>
               ) : (
-                <span className={last ? "text-[var(--color-ink)] font-medium" : ""} aria-current={last ? "page" : undefined}>
+                <span className={last ? "text-[var(--color-ink)] font-medium break-words" : "break-words"} aria-current={last ? "page" : undefined}>
                   {item.label}
                 </span>
               )}
