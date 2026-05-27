@@ -11,6 +11,7 @@ export type UnitProgressState = {
 
 const storageKey = (unitId: string) => `aa.progress.${unitId}`;
 
+/** Reads persisted progress for a unit from localStorage, safe for SSR. */
 function read(unitId: string): UnitProgressState {
   if (typeof window === "undefined") return { unitId, completed: {} };
   try {
@@ -24,6 +25,10 @@ function read(unitId: string): UnitProgressState {
   return { unitId, completed: {} };
 }
 
+/**
+ * Persists progress to localStorage and dispatches an "aa:progress" custom
+ * event so other hook instances for the same unit stay in sync.
+ */
 function write(state: UnitProgressState) {
   if (typeof window === "undefined") return;
   try {
@@ -34,6 +39,24 @@ function write(state: UnitProgressState) {
   } catch {}
 }
 
+/**
+ * Tracks per-item completion progress for a single learning unit.
+ *
+ * Progress is persisted to localStorage under the key `aa.progress.<unitId>`
+ * and kept in sync across multiple hook consumers via a custom "aa:progress"
+ * window event.
+ *
+ * @param unitId - Unique identifier for the unit (used as the storage key).
+ * @param items  - The list of progress items that belong to the unit.
+ * @returns An object with completion state and helper actions:
+ *   - `hydrated`        – true once localStorage has been read on the client.
+ *   - `percent`         – completion percentage (0–100).
+ *   - `completedCount`  – number of completed items.
+ *   - `total`           – total number of items.
+ *   - `isComplete(id)`  – returns true if the item with the given id is done.
+ *   - `toggle(id)`      – marks an item complete or incomplete.
+ *   - `reset()`         – clears all progress for this unit.
+ */
 export function useUnitProgress(unitId: string, items: ProgressItem[]) {
   const [state, setState] = useState<UnitProgressState>({ unitId, completed: {} });
   const [hydrated, setHydrated] = useState(false);
