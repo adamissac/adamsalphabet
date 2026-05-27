@@ -216,7 +216,7 @@ export default async function UnitPage({ params }: { params: Promise<Params> }) 
 
 
 
-            <div className="mt-6 flex flex-wrap gap-2">
+            <div className="mt-6 btn-stack-mobile sm:flex-row">
 
               {lessons.length > 0 && (
 
