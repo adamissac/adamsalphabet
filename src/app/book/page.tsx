@@ -373,6 +373,7 @@ export default function BookPage() {
                       type="submit"
                       disabled={status === "submitting" || bookingConfigured === null}
                       size="lg"
+                      className="w-full sm:w-auto"
                       rightIcon={status === "submitting" ? <Spinner /> : <Arrow />}
                     >
                       {status === "submitting"
