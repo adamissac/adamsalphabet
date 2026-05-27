@@ -44,7 +44,7 @@ export default function Home() {
                 stops feeling like a wall.
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-3">
+              <div className="mt-8 btn-stack-mobile">
                 <Button href="/mathematics" size="lg" rightIcon={<ArrowRight />}>
                   Start learning — it&apos;s free
                 </Button>
@@ -231,7 +231,7 @@ export default function Home() {
               <span className="inline-flex items-center gap-2"><Check tone="light" /> Always free</span>
             </div>
           </div>
-          <div className="col-span-12 md:col-span-5 flex md:justify-end gap-3 flex-wrap">
+          <div className="col-span-12 md:col-span-5 btn-stack-mobile md:justify-end">
             <Button href="/book" size="lg" rightIcon={<ArrowRight />}>
               Book a session
             </Button>
