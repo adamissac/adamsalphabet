@@ -84,7 +84,7 @@ export default function Navbar() {
         <div className="flex h-[4.25rem] items-center justify-between gap-6">
           <Link
             href="/"
-            className="flex items-center gap-2.5 font-display font-bold text-[1.0625rem] text-[var(--color-brand-700)] hover:text-[var(--color-brand-600)] transition-colors"
+            className="flex items-center gap-2.5 font-display font-bold text-[1.0625rem] text-[var(--color-brand-700)] hover:text-[var(--color-brand-600)] transition-colors min-w-0"
             aria-label="Adam's Alphabet — home"
           >
             <span className="relative w-10 h-10 rounded-lg overflow-hidden ring-2 ring-[var(--color-brand-100)] shadow-sm shrink-0">
@@ -97,7 +97,7 @@ export default function Navbar() {
                 priority
               />
             </span>
-            Adam&apos;s Alphabet
+            <span className="truncate hidden min-[400px]:inline">Adam&apos;s Alphabet</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-1" aria-label="Primary">
@@ -185,7 +185,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-[var(--color-ink)] hover:bg-[var(--color-surface-2)] focus:outline-none"
+            className="md:hidden inline-flex items-center justify-center rounded-md min-w-[44px] min-h-[44px] p-2 text-[var(--color-ink)] hover:bg-[var(--color-surface-2)] focus:outline-none"
             aria-controls="mobile-menu"
             aria-expanded={open}
             aria-label="Toggle menu"
@@ -209,14 +209,14 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div id="mobile-menu" className="md:hidden border-t border-[var(--color-brand-100)] bg-white shadow-[var(--shadow-card)]">
+        <div id="mobile-menu" className="md:hidden border-t border-[var(--color-brand-100)] bg-white shadow-[var(--shadow-card)] max-h-[calc(100dvh-4.25rem)] overflow-y-auto overscroll-contain">
           <nav className="px-4 py-3 flex flex-col gap-1" aria-label="Mobile">
             {NAV_LINKS.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
                 className={[
-                  "px-3 py-2 rounded-md text-base font-medium",
+                  "px-3 py-3 rounded-md text-base font-medium min-h-[44px] flex items-center",
                   isActive(l.href)
                     ? "text-[var(--color-brand-700)] bg-[var(--color-brand-50)]"
                     : "text-[var(--color-ink)] hover:bg-[var(--color-surface-2)]",
