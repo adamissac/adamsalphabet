@@ -180,13 +180,15 @@ body {
   padding: 0.75rem 1.25rem;
   font-weight: 600;
   font-size: 0.9375rem;
-  line-height: 1;
+  line-height: 1.2;
   border-radius: var(--radius-md);
   border: 1px solid transparent;
   cursor: pointer;
   transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
   text-decoration: none;
   white-space: nowrap;
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
 }
 .btn:disabled { opacity: 0.55; cursor: not-allowed; pointer-events: none; }
 .btn:focus-visible { box-shadow: var(--shadow-focus); outline: none; }
@@ -281,6 +283,7 @@ body {
   font-size: 1rem;
   line-height: 1.4;
   transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  min-height: 44px;
 }
 .input::placeholder, .textarea::placeholder { color: var(--color-ink-soft); }
 .input:hover, .textarea:hover, .select:hover { border-color: var(--color-ink-soft); }
@@ -754,3 +757,57 @@ body {
   z-index: 100;
 }
 .skip-link:focus { left: 1rem; }
+
+/* =============================================================
+   Mobile / touch-friendly tweaks
+   ============================================================= */
+
+@media (max-width: 639px) {
+  .list-row {
+    gap: 0.75rem;
+    padding: 1rem 0;
+  }
+
+  .list-row__index {
+    width: 1.5rem;
+    font-size: 0.8125rem;
+  }
+
+  .btn-lg {
+    padding: 0.85rem 1.15rem;
+    font-size: 0.9375rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .stat-strip__num {
+    font-size: 1.25rem;
+  }
+
+  .step-card {
+    padding: 1.25rem;
+  }
+}
+
+/* Full-width CTAs on narrow screens when stacked */
+.btn-stack-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+@media (min-width: 640px) {
+  .btn-stack-mobile {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn-stack-mobile > .btn,
+  .btn-stack-mobile > a.btn {
+    width: auto;
+  }
+}
+.btn-stack-mobile > .btn,
+.btn-stack-mobile > a.btn {
+  width: 100%;
+}
