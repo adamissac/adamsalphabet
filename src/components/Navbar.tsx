@@ -80,7 +80,7 @@ export default function Navbar() {
           : "shadow-[var(--shadow-card)]",
       ].join(" ")}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 safe-x">
         <div className="flex h-[4.25rem] items-center justify-between gap-6">
           <Link
             href="/"
