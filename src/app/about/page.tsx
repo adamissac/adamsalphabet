@@ -250,7 +250,7 @@ export default function AboutPage() {
               <p className="mt-4 text-[#C8C9CC] max-w-xl">
                 I read every message. The best ways to reach me are below.
               </p>
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-6 btn-stack-mobile sm:flex-row">
                 <Button href="/book" rightIcon={<Arrow />}>Book a free session</Button>
                 <a
                   href="mailto:adamissac08@gmail.com"
