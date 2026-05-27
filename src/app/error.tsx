@@ -23,7 +23,7 @@ export default function GlobalError({
         <p className="lede mt-4">
           Try again, or head back home. If this keeps happening, let Adam know.
         </p>
-        <div className="mt-7 flex justify-center gap-3 flex-wrap">
+        <div className="mt-7 btn-stack-mobile justify-center">
           <Button onClick={reset}>Try again</Button>
           <Button href="/" variant="outline">Go home</Button>
         </div>
