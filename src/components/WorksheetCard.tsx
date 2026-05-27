@@ -21,7 +21,7 @@ export default function WorksheetCard({ driveFileId, title, description }: Props
       <div className="p-5 flex flex-col gap-2">
         <h3 className="font-display font-semibold text-lg leading-[1.4]">{title}</h3>
         {description && <p className="small text-[var(--color-ink-muted)]">{description}</p>}
-        <div className="mt-2 flex gap-2 flex-wrap">
+        <div className="mt-2 flex gap-2 flex-wrap btn-stack-mobile">
           <a
             href={view}
             target="_blank"
