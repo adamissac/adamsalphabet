@@ -11,7 +11,7 @@ export default function NotFound() {
         <p className="lede mt-4">
           The link may be broken or the page may have moved. Let&apos;s get you back on track.
         </p>
-        <div className="mt-7 flex justify-center gap-3 flex-wrap">
+        <div className="mt-7 btn-stack-mobile justify-center">
           <Button href="/">Take me home</Button>
           <Button href="/mathematics" variant="outline">Open the math library</Button>
         </div>
