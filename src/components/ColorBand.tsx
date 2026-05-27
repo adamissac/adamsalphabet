@@ -7,9 +7,9 @@ type BandVariant = "dark" | "brand";
 type BandSize = "sm" | "md" | "lg";
 
 const PADDING: Record<BandSize, string> = {
-  sm: "py-12 sm:py-16",
-  md: "py-16 sm:py-20",
-  lg: "py-20 sm:py-24",
+  sm: "py-10 sm:py-16",
+  md: "py-14 sm:py-20",
+  lg: "py-16 sm:py-24",
 };
 
 const VARIANT: Record<
