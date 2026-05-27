@@ -19,7 +19,7 @@ export default function LessonCard({
         type="button"
         onClick={() => setExpanded((v) => !v)}
         aria-expanded={expanded}
-        className="w-full flex items-start gap-4 p-5 sm:p-6 text-left hover:bg-[var(--color-surface-2)]/50 transition-colors"
+        className="w-full flex items-start gap-4 p-5 sm:p-6 text-left hover:bg-[var(--color-surface-2)]/50 transition-colors min-h-[44px]"
       >
         <span
           aria-hidden
