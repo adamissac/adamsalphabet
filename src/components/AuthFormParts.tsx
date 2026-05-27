@@ -59,7 +59,7 @@ export function AuthInput({
             type="button"
             onClick={() => setRevealed((v) => !v)}
             aria-label={revealed ? "Hide password" : "Show password"}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-semibold tracking-wide text-[var(--color-ink-muted)] hover:text-[var(--color-brand-700)] transition-colors uppercase"
+            className="absolute right-1 top-1/2 -translate-y-1/2 min-w-[44px] min-h-[44px] grid place-items-center text-xs font-semibold tracking-wide text-[var(--color-ink-muted)] hover:text-[var(--color-brand-700)] transition-colors uppercase"
           >
             {revealed ? "Hide" : "Show"}
           </button>
