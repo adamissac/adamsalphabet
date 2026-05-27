@@ -4,8 +4,8 @@ const YEAR = new Date().getFullYear();
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[var(--color-border)] bg-white mt-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+    <footer className="border-t border-[var(--color-border)] bg-white mt-12 safe-bottom">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 safe-x">
         <div className="grid lg:grid-cols-12 gap-10">
           {/* Left: identity */}
           <div className="lg:col-span-5">
