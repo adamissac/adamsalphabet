@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <div className="border-b border-[var(--color-border)] bg-[#FBFAF7]">
+      <div className="border-b border-[var(--color-border)] bg-[var(--color-bg)]">
         <Container size="lg" className="py-5 sm:py-6">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "About" }]} />
         </Container>
