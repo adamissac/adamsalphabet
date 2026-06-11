@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Container from "../../components/Container";
 import Section from "../../components/Section";
 import Breadcrumbs from "../../components/Breadcrumbs";
