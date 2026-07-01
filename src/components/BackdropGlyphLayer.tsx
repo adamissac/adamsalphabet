@@ -71,7 +71,7 @@ export default function BackdropGlyphLayer({
         ctx.rotate(((g.rot ?? 0) * Math.PI) / 180);
         ctx.globalAlpha = opacity;
         ctx.fillStyle = tint?.color ?? glyphColor;
-        ctx.font = `${g.font === "sans" ? 500 : 700} ${sizePx}px "IBM Plex Sans", sans-serif`;
+        ctx.font = `700 ${sizePx}px ${g.font === "sans" ? "Inter, sans-serif" : "Georgia, serif"}`;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.fillText(g.ch, 0, 0);

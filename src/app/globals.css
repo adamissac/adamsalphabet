@@ -53,11 +53,9 @@
   --color-warning: #C58515;
   --color-danger:  #B8261C;
 
-  /* Fonts (wired in next/font in layout.tsx). One family, weight-driven
-     hierarchy — headings just lean on heavier weights below rather than a
-     second imported font. */
-  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  /* Fonts (wired in next/font in layout.tsx) */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-lexend), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, monospace;
 
   /* Radii */
@@ -136,10 +134,10 @@ body {
    Typography utilities
    ============================================================= */
 
-/* Display headings — same family as body, distinguished by weight (700)
-   rather than a second typeface. Keep line-heights generous (≥1.15 on
-   tight sizes) so ascenders/descenders do not collide. Letter-spacing
-   stays mild; very negative tracking collapses counters at larger sizes. */
+/* Display headings - Lexend has tall vertical metrics, so we keep line-heights
+   generous (≥1.15 on tight sizes) to prevent ascenders/descenders from kissing
+   the line above. Letter-spacing is mild; very negative tracking collapses
+   counters at larger sizes. */
 .font-display { font-family: var(--font-display); letter-spacing: -0.01em; }
 
 /* NOTE: Bootstrap-style class names (.h1, .h2, etc.) are used here deliberately
@@ -1971,7 +1969,7 @@ body {
 }
 
 /* Hero stat strip - 4 column grid with vertical divider rules. Each cell
-   uses display number over a micro caption. */
+   uses display number (Lexend) over a micro caption. */
 .stat-strip {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
