@@ -241,7 +241,7 @@ export default function FloatingMathCanvas({
       const key = Math.round(size);
       let f = fonts.get(key);
       if (!f) {
-        f = `700 ${key}px Georgia, "Times New Roman", serif`;
+        f = `700 ${key}px "DM Sans", "Source Sans 3", sans-serif`;
         fonts.set(key, f);
       }
       return f;
