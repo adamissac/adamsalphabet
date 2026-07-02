@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { SITE_POSITIONING } from "../data/site-copy";
+import { scrollToPageTop } from "../lib/scroll-to-hash";
 import {
   ADAM_EMAIL,
   ALAN_EMAIL,
@@ -16,6 +18,14 @@ import {
 const YEAR = new Date().getFullYear();
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  function handleHomeClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    if (pathname !== "/") return;
+    e.preventDefault();
+    scrollToPageTop();
+  }
+
   return (
     <footer className="mt-10 border-t border-[var(--color-border)] bg-[var(--color-bg)] safe-bottom">
       <div className="mx-auto max-w-7xl page-x py-8 sm:py-9">
