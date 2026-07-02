@@ -2481,11 +2481,11 @@ body {
 }
 @media (min-width: 640px) {
   .site-announcement__inner {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.8125rem;
+    padding-bottom: 0.8125rem;
   }
   .site-announcement__text {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 }
 
